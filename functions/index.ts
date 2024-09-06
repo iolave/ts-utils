@@ -1,6 +1,6 @@
 /**
- * `Result<T>` is inspired in the golang error handling
- * and is ment to be used as the return type of a function.
+ * `Result<T>` is inspired in the way golang handles errors.
+ * This type is ment to be used as the return type of a function.
  */
 export type Result<T> = [T, null] | [null, Error];
 
@@ -18,10 +18,10 @@ export function Ok<T>(v: T): Result<T> {
 
 /**
  * `Err` accepts either an `Error` or a `string`.
- * - If an `Error` is passed to it, it will simply map that error
+ * - If an `Error` is given, it will map the error
  * to `Result<any>`
- * - Otherwise, it creates a new `Error` object with the
- * string passed, and will map that error a `Result<any>`.
+ * - Otherwise, a new `Error` is created out of the
+ * given string, then the error is mapped to `Result<any>`.
  */
 export function Err(e: Error | string): Result<any> {
 	if (e instanceof Error) return [null, e];
@@ -40,8 +40,10 @@ export function Err(e: Error | string): Result<any> {
  * `safe` method.
  
  * @example
+ * ```
  * // Safe json parse
  * const [parse, parseErr] = await safePromise(req.json());
+ * ```
  */
 export async function safePromise<T>(prom: Promise<T>): Promise<Result<T>> {
 	return prom.then(v => Ok(v)).catch((e: Error) => Err(e));
@@ -49,7 +51,7 @@ export async function safePromise<T>(prom: Promise<T>): Promise<Result<T>> {
 
 /**
  * `safe<T>` is a function that takes a synchronous function
- * that returns `T` as an argument. It will wrap the the passed
+ * that returns `T` as an argument. `safe<T>` wraps the the passed
  * function in a try-catch statement.
  * - If any error is catched, `Err()` wil be returned.
  * - Otherwise, `Ok()` will be returned.
@@ -57,8 +59,10 @@ export async function safePromise<T>(prom: Promise<T>): Promise<Result<T>> {
  * For promises, it is recommended to use the `safePromise` method.
  *
  * @example
+ * ```
  * // Safe json parse
  * const [parse, parseErr] = safe(() => JSON.parse("{not valid json}"));
+ * ```
  */
 export function safe<T>(fn: () => T): Result<T> {
 	try {
