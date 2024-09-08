@@ -3,5 +3,6 @@
   "version": "1.0.1",
   "exports": {
     "./functions": "./functions/index.ts",
+    "./fs": "./fs/index.ts",
   }
 }
