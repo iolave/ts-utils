@@ -6,9 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [unreleased]
+### Added
+- File helper that writes content to the end of a file.
+- Asynchronous writeable stream helper that writes content to it. 
+- Safe json.parse alternative.
+
+### Changed 
 - Golang-like error handling utilities entrypoint is now `@iolave/utils/results`.
-- JSON utilities:
-    - `parse`: a safe JSON.parse alternative.
 
 ## [v1.0.1]
 ### Fixed

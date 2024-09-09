@@ -8,9 +8,11 @@
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@types/chai": "^4.3.19",
     "@types/mocha": "^10.0.6",
+    "@types/sinon": "^17.0.3",
     "chai": "^4.3.10",
     "mocha": "^10.4.0",
     "nyc": "^17.0.0",
+    "sinon": "^18.0.0",
     "ts-node": "^10.9.2"
   },
   "volta": {

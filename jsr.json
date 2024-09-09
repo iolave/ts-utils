@@ -2,7 +2,8 @@
   "name": "@iolave/utils",
   "version": "1.0.1",
   "exports": {
-    "./fs": "./fs/index.ts",
+    "./files": "./src/files.ts",
+    "./streams": "./src/streams.ts",
     "./functions": "./src/functions.ts",
     "./results": "./src/results.ts",
     "./json": "./src/json.ts"

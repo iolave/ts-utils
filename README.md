@@ -17,6 +17,8 @@ Documentation can be found at [jsr:@iolave/utils](https://jsr.io/@iolave/utils/d
 ## Features
 - Golang-like error handling utilities: `@iolave/utils/results`.
 - Functions related utilities (like making promises and sync functions safe): `@iolave/utils/functions`.
+- Streams utilities (like a asynchornous version of the `fs.WriteStream.write` method): `@iolave/utils/streams`.
+- File related utilities: `@iolave/utils/files`.
 
 ## Development
 *Install dependencies:*
