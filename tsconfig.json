@@ -1,27 +1,21 @@
 {
+  // The following package sets the required configuration for node@20 - https://www.npmjs.com/package/@tsconfig/node20
   "compilerOptions": {
-    // Enable latest features
-    "lib": ["ESNext", "DOM"],
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleDetection": "force",
-    "jsx": "react-jsx",
-    "allowJs": true,
-
-    // Bundler mode
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
-
-    // Best practices
-    "strict": true,
-    "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
-
-    // Some stricter flags (disabled by default)
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
-  }
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "resolveJsonModule": false,
+    "sourceMap": true,                        /* Generates corresponding '.map' file. */
+    "outDir": "dist",                         /* Redirect output structure to the directory. */
+    "composite": true,                        /* Enable project compilation */
+    "noUnusedLocals": true,                   /* Report errors on unused locals. */
+    "noUnusedParameters": true,               /* Report errors on unused parameters. */
+    "noImplicitReturns": true,                /* Report error when not all code paths in function return a value. */
+    "allowSyntheticDefaultImports": true,     /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+    "baseUrl": ".",                           /* Lets you set a base directory to resolve non-absolute module names */
+  },
+  "include": [
+    "src",
+    "test/**/*"
+  ]
+  // "exclude": [ "node_modules" ]
 }

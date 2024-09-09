@@ -2,7 +2,9 @@
   "name": "@iolave/utils",
   "version": "1.0.1",
   "exports": {
-    "./functions": "./functions/index.ts",
     "./fs": "./fs/index.ts",
+    "./functions": "./src/functions.ts",
+    "./results": "./src/results.ts",
+    "./json": "./src/json.ts"
   }
 }

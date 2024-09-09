@@ -15,15 +15,16 @@ deno add @iolave/utils
 Documentation can be found at [jsr:@iolave/utils](https://jsr.io/@iolave/utils/doc).
 
 ## Features
-- Golang-like error handling utilities: `@iolave/utils/functions`.
+- Golang-like error handling utilities: `@iolave/utils/results`.
+- Functions related utilities (like making promises and sync functions safe): `@iolave/utils/functions`.
 
 ## Development
 *Install dependencies:*
 ```
-bun install
+npm install
 ```
 
 *Run tests:*
 ```
-bun test
+npm coverage # or npm test
 ```
