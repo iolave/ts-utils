@@ -7,11 +7,19 @@ import { safe } from "./functions";
 /**
  * `writeAtTheEnd` writes content to the end of a file
  * that will be opened with the given encoding (defaults to `utf8`).
- * If the write is successful, undefined is returned.
- * Otherwise an error will be returned.
+ * If the path's directory does not exists, it will be created.
+ *
+ * - If the write is successful, undefined is returned.
+ * - Otherwise an error will be returned.
  */
-export async function writeAtTheEnd(path: string, content: string, encoding?: BufferEncoding): Promise<Error | undefined> {
-	const ws = fs.createWriteStream(path, { encoding: encoding ?? "utf8", flags: "a+" });
+export async function writeAtTheEnd(filePath: string, content: string, encoding?: BufferEncoding): Promise<Error | undefined> {
+	if (!fs.existsSync(path.dirname(filePath))) {
+		const [_, err] = safe(() => fs.mkdirSync(path.dirname(filePath), { recursive: true }));
+		if (err) return err;
+	}
+
+	const ws = fs.createWriteStream(filePath, { encoding: encoding ?? "utf8", flags: "a+" });
+
 
 	return new Promise<Error | undefined>(resolve => {
 		ws.on("error", (err) => {

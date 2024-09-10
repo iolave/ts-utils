@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [unreleased]
+## [v1.1.2]
+### Changed
+- `files.writeAtTheEnd` now creates the directory if it doesn't exist.
+
+### Fixed
+- fixed package.
 ## [v1.1.1]
 ### Fixed
 - fixed package.
@@ -34,7 +40,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `Ok` method that safe return a value.
     - `Err` method that safe return an error.
 
-[unreleased]: https://github.com/iolave/ts-utils/compare/v1.1.0...staging
+[unreleased]: https://github.com/iolave/ts-utils/compare/v1.1.2...master
+[v1.1.2]: https://github.com/iolave/ts-utils/releases/tag/v1.1.2
+[v1.1.1]: https://github.com/iolave/ts-utils/releases/tag/v1.1.1
 [v1.1.0]: https://github.com/iolave/ts-utils/releases/tag/v1.1.0
 [v1.0.1]: https://github.com/iolave/ts-utils/releases/tag/v1.0.1
 [v1.0.0]: https://github.com/iolave/ts-utils/releases/tag/v1.0.0

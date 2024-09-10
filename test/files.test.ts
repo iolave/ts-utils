@@ -24,6 +24,26 @@ describe("./src/files", () => {
 			expect(content).to.be.eq(readContent);
 		});
 
+		it("should write content and create directory if it doesnt exists", async () => {
+			const p = path.join(os.tmpdir(), crypto.randomUUID(), crypto.randomUUID());
+			const content = "content\n";
+			const err = await files.writeAtTheEnd(p, content, "utf8");
+
+			expect(err).to.be.undefined;
+
+			const readContent = fs.readFileSync(p).toString();
+			expect(content).to.be.eq(readContent);
+		});
+
+		it("should return error while trying create directory", async () => {
+			const p = path.join("/\\doesntexists", crypto.randomUUID(), crypto.randomUUID());
+			const content = "content\n";
+			const err = await files.writeAtTheEnd(p, content, "utf8");
+
+			expect(err).to.exist;
+			expect(err).to.be.instanceOf(Error);
+		});
+
 		it("should return error", async () => {
 			Sinon.stub(streams, "write").resolves(new Error());
 
