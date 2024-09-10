@@ -6,8 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [unreleased]
+## [v1.1.0]
 ### Added
 - File helper that writes content to the end of a file.
+- Inefficient file helpers to remove line(s) from a file.
 - Asynchronous writeable stream helper that writes content to it. 
 - Safe json.parse alternative.
 
@@ -28,5 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `Ok` method that safe return a value.
     - `Err` method that safe return an error.
 
-[unreleased]: https://github.com/iolave/ts-utils/compare/v1.0.0...staging
+[unreleased]: https://github.com/iolave/ts-utils/compare/v1.1.0...staging
+[v1.1.0]: https://github.com/iolave/ts-utils/releases/tag/v1.1.0
+[v1.0.1]: https://github.com/iolave/ts-utils/releases/tag/v1.0.1
 [v1.0.0]: https://github.com/iolave/ts-utils/releases/tag/v1.0.0

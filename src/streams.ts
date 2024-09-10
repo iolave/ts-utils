@@ -14,7 +14,7 @@ export async function write(ws: fs.WriteStream, content: string): Promise<Error 
 	if (listenerIdx === -1) ws.on("error", streamsVoidListener);
 
 	return new Promise((resolve) => {
-		ws.write(content, (err) => { resolve(err) });
+		ws.write(content, (err) => resolve(err ?? undefined));
 	});
 }
 
