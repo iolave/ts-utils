@@ -1,5 +1,6 @@
 {
   "description": "General purpose utilities packed into a single library",
+  "type": "module",
   "scripts": {
     "test": "mocha",
     "coverage": "nyc npm run test"
